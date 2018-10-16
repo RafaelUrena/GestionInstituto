@@ -18,3 +18,10 @@ and open the template in the editor.
     margin-left: auto;
     margin-right: auto;
 }
+.novalido fieldset{
+    width: 200px;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

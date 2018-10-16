@@ -74,4 +74,21 @@ public class Conexion
 
     }
     
+    public Usuario sacarUsuario(String email, String pass) throws SQLException{
+        Usuario u = new Usuario();
+        String Sentencia = "SELECT * FROM USUARIO WHERE email='" + email + "' AND clave='"+pass+"'";
+         Conj_Registros =  Sentencia_SQL.executeQuery(Sentencia);
+         
+         if(Conj_Registros.next()){
+             u.setEmail(Conj_Registros.getString("email"));
+             u.setClave(Conj_Registros.getString("clave"));
+             u.setID_depart(Integer.parseInt(Conj_Registros.getString("ID_depart")));
+             u.setID_user(Integer.parseInt(Conj_Registros.getString("ID_user")));
+             u.setNombre(Conj_Registros.getString("nombre"));
+         } else {
+             u = null;
+         }
+         
+        return u;
+    }
 }
